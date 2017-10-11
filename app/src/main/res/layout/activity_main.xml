@@ -1,18 +1,131 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.jh.lovedemo.MainActivity">
+    android:orientation="vertical"
+    tools:context=".activity.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:id="@+id/LinearLayoutPicture"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="3"
+        android:orientation="vertical">
+        <!-- 图片切换  -->
+        <com.example.jh.lovedemo.imageslider.SliderLayout
+            android:id="@+id/slider"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            custom:auto_cycle="true"
+            custom:indicator_visibility="visible"
+            custom:pager_animation="Accordion"
+            custom:pager_animation_span="1100" />
 
-</android.support.constraint.ConstraintLayout>
+        <!--  <com.gitonway.androidimagesliderdemo.widget.imageslider.Indicators.PagerIndicator
+              android:id="@+id/custom_indicator"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:gravity="center"
+              custom:selected_color="#0095BF"
+              custom:unselected_color="#55333333"
+              custom:selected_drawable="@drawable/ic_launcher"
+              custom:shape="oval"
+              custom:selected_padding_left="6dp"
+              custom:selected_padding_right="6dp"
+              custom:unselected_padding_left="2dp"
+              custom:unselected_padding_right="2dp"
+              android:layout_centerHorizontal="true"
+              android:layout_alignParentBottom="true"
+              custom:selected_width="6dp"
+              custom:selected_height="6dp"
+              custom:unselected_width="6dp"
+              custom:unselected_height="6dp"
+              android:layout_marginBottom="20dp"
+              />
+          <com.gitonway.androidimagesliderdemo.widget.imageslider.Indicators.PagerIndicator
+              android:id="@+id/custom_indicator2"
+              style="@style/AndroidImageSlider_Corner_Oval_Orange"
+              android:layout_centerHorizontal="true"
+              android:layout_alignParentBottom="true"
+              android:layout_marginBottom="20dp"
+              />  -->
+    </LinearLayout>
+
+    <!-- 文字展现  -->
+    <LinearLayout
+        android:id="@+id/LinearLayoutWord"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="2"
+        android:background="@android:color/background_dark"
+        android:orientation="vertical">
+
+        <com.example.jh.lovedemo.textsurface.TextSurface
+            android:id="@+id/text_surface"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent" />
+
+    </LinearLayout>
+
+    <!-- 音乐播放器  -->
+
+    <LinearLayout
+        android:id="@+id/LinearLayoutMusic"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="3"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@id/android:list"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:scrollbars="vertical" />
+
+        <LinearLayout
+            android:id="@+id/bottomBtn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/stop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/stop"/>
+
+            <Button
+                android:id="@+id/last"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/last"/>
+
+
+            <Button
+                android:id="@+id/start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/pause"/>
+
+            <Button
+                android:id="@+id/pause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/start"/>
+
+            <Button
+                android:id="@+id/next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/next"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

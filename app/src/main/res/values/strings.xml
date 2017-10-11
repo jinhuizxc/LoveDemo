@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">LoveDemo</string>
+    <string name="app_name">Love Demo</string>
+    <string name="love">I LOVE YOU!</string>
+
 </resources>
